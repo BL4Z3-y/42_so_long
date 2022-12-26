@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 22:45:29 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/26 23:54:12 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/27 00:27:46 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	put_wall(void *mlx, void *win, void *wall, char **map, int hei, int wid)
 	int	y;
 	int	i;
 	int	j;
-
+	
 	i = 1;
 	j = 1;
 	x = 64;
