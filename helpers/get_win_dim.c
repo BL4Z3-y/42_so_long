@@ -6,13 +6,13 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 18:20:18 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/25 19:54:47 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/26 12:11:59 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	get_win_dim(char **str, int *size_h, int *size_w)
+void	get_win_dim(char **str, int *size_h, int *size_w , int *hei, int *wid)
 {
 	int	x;
 	int	y;
@@ -32,6 +32,8 @@ void	get_win_dim(char **str, int *size_h, int *size_w)
 		(*size_w)++;
 		x++;
 	}
+	*hei = *size_h;
+	*wid = *size_w;
 	(*size_w) *= 32;
 	(*size_h) *= 32;
 	(*size_w) += 64;

@@ -9,14 +9,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-typedef struct image
-{
-	char	*path;
-	int		H;
-	int		W;
-	void	*img;
-} img;
-
 typedef struct initial
 {
 	void	*mlx;
@@ -24,8 +16,23 @@ typedef struct initial
 	char	**map;
 	int		window_h;
 	int		window_w;
+	int		hei;
+	int		wid;
 	
 } init;
+
+typedef struct xpm
+{
+	void	*background;
+	void	*corner;
+	void	*side1;
+	void	*side2;
+	void	*side3;
+	void	*top1;
+	void	*top2;
+	void	*top3;
+	void	*wall;
+}	w_xpm;
 
 //GNL
 # ifndef BUFFER_SIZE
@@ -65,8 +72,12 @@ void	ft_print_adr(unsigned long l, int *len);
 //HELPERS
 void	ft_error(int i);
 char	**map_read(char *path);
-void	get_win_dim(char **str, int *size_h, int *size_w);
-
+void	get_win_dim(char **str, int *size_h, int *size_w , int *hei, int *wid);
+void	put_background(void *mlx, void *win, void *img, int w_hei, int w_wid, int m_wid);
+void	image_to_xpm(void *mlx, void **background, void **corner, void **side1, void **side2, void **side3, void **top1, void **top2, void **top3, void **wall);
+void	put_border(void *mlx, void *win, void *corner, void *side1, void *side2, void *side3, void *top1, void *top2, void *top3, int hei, int wid);
+void	put_border2(void *mlx, void *win, void *side3, void *top3, int hei, int wid);
+void	put_wall(void *mlx, void *win, void *wall, char **map, int hei, int wid);
 //-----------------------------------------------------//
 
 #endif
