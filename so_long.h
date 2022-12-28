@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
+/*   Updated: 2022/12/28 13:59:01 by yes-slim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -18,8 +30,8 @@ typedef struct initial
 	int		window_w;
 	int		hei;
 	int		wid;
-	
-} init;
+	int		moves;
+}	t_init;
 
 typedef struct xpm
 {
@@ -32,12 +44,21 @@ typedef struct xpm
 	void	*top2;
 	void	*top3;
 	void	*wall;
-}	w_xpm;
+	void	*step_c;
+	void	*game_over;
+	void	*cherrie;
+}	t_wxpm;
+
+// typedef struct player
+// {
+// 	void	*;
+// } p_xpm;
 
 //GNL
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69 
 # endif
+
 char	*get_next_line(int fd);
 char	*ft_fill(char *str);
 char	*ft_remainder(char *str);
@@ -72,12 +93,17 @@ void	ft_print_adr(unsigned long l, int *len);
 //HELPERS
 void	ft_error(int i);
 char	**map_read(char *path);
-void	get_win_dim(char **str, int *size_h, int *size_w , int *hei, int *wid);
-void	put_background(void *mlx, void *win, void *img, int w_hei, int w_wid, int m_wid);
-void	image_to_xpm(void *mlx, void **background, void **corner, void **side1, void **side2, void **side3, void **top1, void **top2, void **top3, void **wall);
-void	put_border(void *mlx, void *win, void *corner, void *side1, void *side2, void *side3, void *top1, void *top2, void *top3, int hei, int wid);
-void	put_border2(void *mlx, void *win, void *side3, void *top3, int hei, int wid);
-void	put_wall(void *mlx, void *win, void *wall, char **map, int hei, int wid);
+void	get_win_dim(t_init *game);
+void	put_background(t_init *game, t_wxpm *asset);
+void	terrain(void *mlx, t_wxpm *asset);
+void	put_border(t_init *game, t_wxpm *asset);
+void	put_border2(t_init *game, t_wxpm *asset);
+void	put_wall_cherries(t_init *game, t_wxpm *asset);
+int		moves_count(int keycode, t_init *game, t_wxpm *asset);
+int		ft_exit(void);
+void	map_render(t_init *game, t_wxpm *asset);
+void	map_update(t_init *game, t_wxpm *asset);
+
 //-----------------------------------------------------//
 
 #endif

@@ -6,36 +6,36 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 18:20:18 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/26 12:11:59 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:23:40 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	get_win_dim(char **str, int *size_h, int *size_w , int *hei, int *wid)
+void	get_win_dim(t_init *game)
 {
 	int	x;
 	int	y;
 
 	x = 0;
-	(*size_h) = 0;
+	game->window_h = 0;
 	y = 0;
-	(*size_w) = 0;
-	while (str[y])
+	game->window_w = 0;
+	while (game->map[y])
 	{
-		(*size_h)++;
+		game->window_h++;
 		y++;
 	}
 	y = 0;
-	while (str[y][x])
+	while (game->map[y][x])
 	{
-		(*size_w)++;
+		game->window_w++;
 		x++;
 	}
-	*hei = *size_h;
-	*wid = *size_w;
-	(*size_w) *= 32;
-	(*size_h) *= 32;
-	(*size_w) += 64;
-	(*size_h) += 64;
+	game->hei = game->window_h;
+	game->wid = game->window_w;
+	game->window_w *= 32;
+	game->window_h *= 32;
+	game->window_w += 64;
+	game->window_h += 64;
 }

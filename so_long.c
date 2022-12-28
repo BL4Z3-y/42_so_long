@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 13:35:44 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/27 00:09:15 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 14:43:00 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@ int main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		init	*game;
-		w_xpm	*asset;
+		t_init	*game;
+		t_wxpm	*asset;
 		
-		game = malloc(sizeof(init));
-		asset = malloc(sizeof(w_xpm));
+		game = malloc(sizeof(t_init));
+		asset = malloc(sizeof(t_wxpm));
 		game->map = map_read(av[1]);
-		get_win_dim(game->map, &game->window_h, &game->window_w, &game->hei, &game->wid);
-		
-
-
+		game->moves = 0;
+		get_win_dim(game);
 
 
 
@@ -38,14 +36,34 @@ int main(int ac, char **av)
 
 		game->mlx = mlx_init();
 		game->win = mlx_new_window(game->mlx, game->window_w, game->window_h, "so_long");
-		image_to_xpm(game->mlx, &asset->background, &asset->corner, &asset->side1, &asset->side2, &asset->side3, &asset->top1, &asset->top2, &asset->top3, &asset->wall);
-		put_background(game->mlx, game->win, asset->background, game->window_h, game->window_w, game->wid);
-		put_border(game->mlx, game->win, asset->corner, asset->side1, asset->side2, asset->side3, asset->top1, asset->top2, asset->top3, game->window_h, game->window_w);
-		put_wall(game->mlx, game->win, asset->wall, game->map, game->hei, game->wid);
-		// mlx_string_put(game->mlx, game->win, 16, game->window_h - 25, 0xFFFFFF, "PRESS [ESC] TO EXIT");
-		// mlx_string_put(game->mlx, game->win, 5, 5, 0xA60B0B, "Move count: ");
-		// mlx_string_put(game->mlx, game->win, 115, 6, 0xA60B0B, ft_itoa(10));
+		map_render(game, asset);	
+		mlx_hook(game->win, 2, 0, moves_count, game);
+		mlx_hook(game->win, 17, 0, ft_exit, game);
 		mlx_loop(game->mlx);
 	}
 	ft_error(3);
+}
+int	moves_count(int keycode, t_init *game, t_wxpm *asset)
+{
+
+	(void)asset;
+	if (keycode == 0 || keycode == 124)
+		ft_printf("Player has moved to the left, Total moves : %d\n", ++game->moves);
+	else if (keycode == 2 || keycode == 123)
+		ft_printf("Player has moved to the right, Total moves : %d\n", ++game->moves);
+	else if (keycode == 13 || keycode == 126)
+		ft_printf("Player has moved upward, Total moves : %d\n", ++game->moves);
+	else if (keycode == 1 || keycode == 125)
+		ft_printf("Player has moved updown, Total moves : %d\n", ++game->moves);
+	if (keycode == 53 || keycode == 12)
+	{
+		mlx_destroy_window(game->mlx, game->win);
+		exit(0);
+	}
+	return (0);
+}
+
+int	ft_exit(void)
+{
+	exit(0);
 }
