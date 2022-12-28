@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 12:09:50 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 02:59:52 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:23:22 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	terrain(void *mlx, t_wxpm *asset)
 	asset->step_c=mlx_xpm_file_to_image(mlx, "./textures/step_c/step_c.xpm", &wid, &hei);
 	asset->game_over=mlx_xpm_file_to_image(mlx, "./textures/GO/game_over.xpm", &widgo, &heigo);
 	asset->cherrie=mlx_xpm_file_to_image(mlx, "./textures/Collectible/cherrie.xpm", &wid, &hei);
+	asset->grave=mlx_xpm_file_to_image(mlx, "./textures/Player/grave.xpm", &wid, &hei);
 }
 

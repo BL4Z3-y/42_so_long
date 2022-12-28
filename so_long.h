@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 13:59:01 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:30:11 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ typedef struct xpm
 	void	*step_c;
 	void	*game_over;
 	void	*cherrie;
+	void	*grave;
+	void	*player_x;
+	void	*player_y;
 }	t_wxpm;
 
 // typedef struct player

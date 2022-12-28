@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 22:45:29 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 02:59:23 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:30:45 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,12 @@ void	put_wall_cherries(t_init *game, t_wxpm *asset)
 				mlx_put_image_to_window(game->mlx, game->win, asset->wall, x, y);
 			if (game->map[i][j] == 'C')
 				mlx_put_image_to_window(game->mlx, game->win, asset->cherrie, x, y);
+			if (game->map[i][j] == 'P')
+			{
+				mlx_put_image_to_window(game->mlx, game->win, asset->grave, x, y);
+				asset->player_x = j;
+				asset->player_y = i;
+			}
 			j++;
 			x += 32;
 		}

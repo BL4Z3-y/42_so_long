@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:19:05 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 14:41:48 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:44:50 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,12 @@ void	map_render(t_init *game, t_wxpm *asset)
 	put_background(game, asset);
 	put_border(game, asset);
 	put_wall_cherries(game, asset);
-	mlx_put_image_to_window(game->mlx, game->win, asset->step_c, 4, 4);
-	mlx_string_put(game->mlx, game->win, 40, 9, 0x931616, ft_itoa(game->moves));
-	// mlx_clear_window(game->mlx, game->win);
-
-	// mlx_put_image_to_window(game->mlx, game->win, asset->game_over, (game->window_w / 2 - 160), (game->window_h / 2 - 50));
-	// mlx_string_put(game->mlx, game->win, 32, game->window_h - 32, 0xFFFFFF, "PRESS [ESC] TO EXIT");
 }
-void	map_update(t_init *game, t_wxpm *asset)
+
+void	player_mov(t_init *game, t_wxpm *asset, int keycode)
 {
-	mlx_destroy_window(game->mlx, game->win);
-	mlx_clear_window(game->mlx, game->win);
-	map_render(game, asset);
+	if (keycode == 13 || keycode == 126)
+	if (keycode == 0 || keycode == 124)
+	if (keycode == 2 || keycode == 123)
+	if (keycode == 1 || keycode == 125)
 }

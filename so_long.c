@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 13:35:44 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 14:43:00 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:25:20 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int main(int ac, char **av)
 }
 int	moves_count(int keycode, t_init *game, t_wxpm *asset)
 {
-
 	(void)asset;
 	if (keycode == 0 || keycode == 124)
 		ft_printf("Player has moved to the left, Total moves : %d\n", ++game->moves);
@@ -55,6 +54,7 @@ int	moves_count(int keycode, t_init *game, t_wxpm *asset)
 		ft_printf("Player has moved upward, Total moves : %d\n", ++game->moves);
 	else if (keycode == 1 || keycode == 125)
 		ft_printf("Player has moved updown, Total moves : %d\n", ++game->moves);
+	// map_update(game, asset);
 	if (keycode == 53 || keycode == 12)
 	{
 		mlx_destroy_window(game->mlx, game->win);
