@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 15:30:11 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/28 21:13:04 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ typedef struct initial
 	int		hei;
 	int		wid;
 	int		moves;
-}	t_init;
-
-typedef struct xpm
-{
+	int		player_x;
+	int		player_y;
 	void	*background;
 	void	*corner;
 	void	*side1;
@@ -48,14 +46,8 @@ typedef struct xpm
 	void	*game_over;
 	void	*cherrie;
 	void	*grave;
-	void	*player_x;
-	void	*player_y;
-}	t_wxpm;
-
-// typedef struct player
-// {
-// 	void	*;
-// } p_xpm;
+	
+}	t_init;
 
 //GNL
 # ifndef BUFFER_SIZE
@@ -97,15 +89,16 @@ void	ft_print_adr(unsigned long l, int *len);
 void	ft_error(int i);
 char	**map_read(char *path);
 void	get_win_dim(t_init *game);
-void	put_background(t_init *game, t_wxpm *asset);
-void	terrain(void *mlx, t_wxpm *asset);
-void	put_border(t_init *game, t_wxpm *asset);
-void	put_border2(t_init *game, t_wxpm *asset);
-void	put_wall_cherries(t_init *game, t_wxpm *asset);
-int		moves_count(int keycode, t_init *game, t_wxpm *asset);
+void	put_background(t_init *game);
+void	terrain(void *mlx, t_init *game);
+void	put_border(t_init *game);
+void	put_border2(t_init *game);
+void	put_wall_cherries(t_init *game);
+int		moves_count(int keycode, t_init *game);
 int		ft_exit(void);
-void	map_render(t_init *game, t_wxpm *asset);
-void	map_update(t_init *game, t_wxpm *asset);
+void	map_render(t_init *game);
+void	player_mov(t_init *game, int keycode);
+void	step_count(t_init *game);
 
 //-----------------------------------------------------//
 
