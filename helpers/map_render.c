@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:19:05 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 22:47:50 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:38:12 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	map_render(t_init *game)
 {
-	terrain(game->mlx, game);
+	terrain(game);
 	put_background(game);
 	put_border(game);
 	put_wall_cherries(game);

@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 22:45:29 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 21:41:20 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:38:19 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,46 @@ void	put_wall_cherries(t_init *game)
 		{
 			if (game->map[i][j] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->wall, x, y);
+			if (game->map[i][j] == 'E')
+			{
+				game->count_e++;
+				mlx_put_image_to_window(game->mlx, game->win, game->exit_c, x, y);
+			}
 			if (game->map[i][j] == 'C')
+			{
 				mlx_put_image_to_window(game->mlx, game->win, game->cherrie, x, y);
+				game->count_c++;
+			}
+			j++;
+			x += 32;
+		}
+		i++;
+		y += 32;
+	}
+}
+void	put_player(t_init *game)
+{
+	int	x;
+	int	y;
+	int	i;
+	int	j;
+	
+	i = 1;
+	j = 1;
+	x = 64;
+	y = 64;
+	while (i < game->hei - 1)
+	{
+		x = 64;
+		j = 1;	
+		while (j < game->wid - 1)
+		{
 			if (game->map[i][j] == 'P')
 			{
+				mlx_put_image_to_window(game->mlx, game->win, game->grave, x, y);
 				game->player_x = j;
 				game->player_y = i;
+				game->count_p++;
 			}
 			j++;
 			x += 32;

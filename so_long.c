@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 13:35:44 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 22:47:54 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/29 14:58:36 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int main(int ac, char **av)
 		game->mlx = mlx_init();
 		game->win = mlx_new_window(game->mlx, game->window_w, game->window_h, "so_long");
 		map_render(game);
+		put_player(game);
 		mlx_put_image_to_window(game->mlx, game->win, game->grave, game->player_x * 32 + 32, game->player_y * 32 + 32);
 		step_count(game);	
 		mlx_hook(game->win, 2, 0, moves_count, game);

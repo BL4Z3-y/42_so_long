@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/28 21:13:04 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:32:22 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ typedef struct initial
 	void	*game_over;
 	void	*cherrie;
 	void	*grave;
-	
+	void	*exit_c;
+	int		count_c;
+	int		count_p;
+	int		count_e;
 }	t_init;
 
 //GNL
@@ -90,7 +93,7 @@ void	ft_error(int i);
 char	**map_read(char *path);
 void	get_win_dim(t_init *game);
 void	put_background(t_init *game);
-void	terrain(void *mlx, t_init *game);
+void	terrain(t_init *game);
 void	put_border(t_init *game);
 void	put_border2(t_init *game);
 void	put_wall_cherries(t_init *game);
@@ -99,6 +102,7 @@ int		ft_exit(void);
 void	map_render(t_init *game);
 void	player_mov(t_init *game, int keycode);
 void	step_count(t_init *game);
+void	put_player(t_init *game);
 
 //-----------------------------------------------------//
 
