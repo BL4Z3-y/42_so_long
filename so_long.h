@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 10:00:35 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 12:06:17 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int		check_down(t_init *game);
 int		check_right(t_init *game);
 int		check_left(t_init *game);
 void	map_check(t_init *game);
+void	get_pos(t_init *game);
 //-----------------------------------------------------//
 
 #endif

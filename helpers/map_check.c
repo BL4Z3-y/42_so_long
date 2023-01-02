@@ -6,13 +6,21 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:59:28 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 10:04:25 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 12:09:08 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
 void	map_check(t_init *game)
+{
+	get_pos(game);
+	if(game->count_c < 1 || game->count_e != 1 || game->count_p != 1)
+		ft_error(2);
+		
+}
+
+void	get_pos(t_init *game)
 {
 	int	x;
 	int	y;

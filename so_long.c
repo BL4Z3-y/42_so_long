@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 13:35:44 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 10:06:55 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:40:06 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int main(int ac, char **av)
 		t_init	*game;
 		
 		game = malloc(sizeof(t_init));
+		if (!game)
+			return(0);
 		map_read(av[1], game);
 		game->moves = 0;
 
