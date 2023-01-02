@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 22:45:29 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 10:00:11 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:18:08 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,7 @@ void	put_wall(t_init *game)
 				mlx_put_image_to_window(game->mlx, game->win, game->wall, x, y);
 			if (game->map[i][j] == 'C')
 				mlx_put_image_to_window(game->mlx, game->win, game->skull, x, y);
-			if (game->map[i][j] == 'E')
-				mlx_put_image_to_window(game->mlx, game->win, game->exit, x, y);
+			mlx_put_image_to_window(game->mlx, game->win, game->exit, game->exit_x * 32 + 32, game->exit_y * 32 + 32);
 			j++;
 			x += 32;
 		}
@@ -104,7 +103,6 @@ void	put_wall(t_init *game)
 }
 void	put_player(t_init *game)
 {
-	game->exit = game->exit_o;
 	mlx_put_image_to_window(game->mlx, game->win, game->exit, game->exit_x * 32 + 32, game->exit_y * 32 + 32);
 	mlx_put_image_to_window(game->mlx, game->win, game->player, game->player_x * 32 + 32, game->player_y * 32 + 32);
 }

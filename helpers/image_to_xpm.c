@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 12:09:50 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 09:37:29 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 10:22:56 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	terrain(t_init *game)
 	game->player_r = mlx_xpm_file_to_image(game->mlx, "./textures/Player/right.xpm", &wid, &hei);
 	game->exit_c = mlx_xpm_file_to_image(game->mlx, "./textures/Door/exit_closed.xpm", &wid, &hei);
 	game->exit_o = mlx_xpm_file_to_image(game->mlx, "./textures/Door/exit_opened.xpm", &wid, &hei);
+	game->exit = game->exit_c;
 }
 

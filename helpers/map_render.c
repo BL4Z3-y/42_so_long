@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:19:05 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 10:05:22 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:25:14 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	map_render(t_init *game)
 	put_background(game);
 	put_border(game);
 	if (game->count_c == 0)
-	{
 		game->map[game->exit_y][game->exit_x] = '0';
-		game->exit = game->exit_o;
-	}
 	put_wall(game);
 }
 
@@ -52,7 +49,7 @@ void	player_mov(t_init *game, int keycode)
 			game->player_x++;
 	}		
 	if (game->player_x == game->exit_x && game->player_y == game->exit_y)
-			exit(0);
+		exit(0);
 	mlx_put_image_to_window(game->mlx, game->win, game->player, game->player_x * 32 + 32, game->player_y * 32 + 32);
 }
 

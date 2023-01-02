@@ -6,11 +6,11 @@
 #    By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 11:54:53 by yes-slim          #+#    #+#              #
-#    Updated: 2023/01/02 10:02:43 by yes-slim         ###   ########.fr        #
+#    Updated: 2023/01/02 10:16:56 by yes-slim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=undefined
 MLX = -lmlx -framework OpenGL -framework AppKit
 NAME = so_long
 LIB = so_long.a
