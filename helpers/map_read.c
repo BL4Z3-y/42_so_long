@@ -6,17 +6,16 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 14:10:45 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/26 14:34:11 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/01 15:00:13 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-char **map_read(char *path)
+void map_read(char *path, t_init *game)
 {
 	char	*str;
 	char	*tmp;
-	char	**map;
 	int		fd;
 
 	if (!ft_strstr(path, ".ber"))
@@ -29,8 +28,10 @@ char **map_read(char *path)
 	while (str)
 	{
 		tmp = ft_strjoin(tmp, str);
+		free(str);
 		str = get_next_line(fd);
 	}
-	map = ft_split(tmp, '\n');
-	return (map);
+	game->map = ft_split(tmp, '\n');
+	free(tmp);
+	free(str);
 }

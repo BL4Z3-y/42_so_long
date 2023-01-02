@@ -6,17 +6,17 @@
 #    By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 11:54:53 by yes-slim          #+#    #+#              #
-#    Updated: 2022/12/28 22:46:37 by yes-slim         ###   ########.fr        #
+#    Updated: 2023/01/02 10:02:43 by yes-slim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 MLX = -lmlx -framework OpenGL -framework AppKit
 NAME = so_long
 LIB = so_long.a
 DEL = rm -f
 
-HELPERS = ft_error map_read get_win_dim put_asset image_to_xpm map_render 
+HELPERS = ft_error map_read get_win_dim put_asset image_to_xpm map_render pos_check map_check
 LIBF = ft_strchr ft_atoi ft_strlen ft_strstr ft_strdup ft_substr ft_strjoin ft_itoa ft_split ft_strcmp
 GNL = get_next_line
 FT_PRINTF =	ft_printf ft_print_char ft_print_str ft_print_nbr ft_print_nbr_uns ft_print_hex_low ft_print_hex_up ft_print_adr

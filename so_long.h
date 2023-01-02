@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/29 15:32:22 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 10:00:35 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ typedef struct initial
 	void	*mlx;
 	void	*win;
 	char	**map;
-	int		window_h;
-	int		window_w;
 	int		hei;
 	int		wid;
-	int		moves;
+	int		window_h;
+	int		window_w;
 	int		player_x;
 	int		player_y;
 	void	*background;
@@ -42,14 +41,22 @@ typedef struct initial
 	void	*top2;
 	void	*top3;
 	void	*wall;
+	void	*player;
+	void	*player_l;
+	void	*player_r;
+	void	*player_u;
+	void	*player_d;
 	void	*step_c;
-	void	*game_over;
-	void	*cherrie;
-	void	*grave;
+	void	*skull;
+	void	*exit;
 	void	*exit_c;
+	void	*exit_o;
+	int		exit_x;
+	int		exit_y;
 	int		count_c;
 	int		count_p;
 	int		count_e;
+	int		moves;
 }	t_init;
 
 //GNL
@@ -90,20 +97,24 @@ void	ft_print_adr(unsigned long l, int *len);
 
 //HELPERS
 void	ft_error(int i);
-char	**map_read(char *path);
+void	map_read(char *path, t_init *game);
 void	get_win_dim(t_init *game);
 void	put_background(t_init *game);
 void	terrain(t_init *game);
 void	put_border(t_init *game);
 void	put_border2(t_init *game);
-void	put_wall_cherries(t_init *game);
+void	put_wall(t_init *game);
 int		moves_count(int keycode, t_init *game);
 int		ft_exit(void);
 void	map_render(t_init *game);
 void	player_mov(t_init *game, int keycode);
 void	step_count(t_init *game);
 void	put_player(t_init *game);
-
+int		check_up(t_init *game);
+int		check_down(t_init *game);
+int		check_right(t_init *game);
+int		check_left(t_init *game);
+void	map_check(t_init *game);
 //-----------------------------------------------------//
 
 #endif

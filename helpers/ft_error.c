@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 10:58:34 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/26 14:34:20 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/01 14:13:52 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_error(int i)
 		ft_printf("Invalid map\n");
 	if (i == 3)
 		ft_printf("Invalid number of arguments\n");
-	exit(0);
+	exit(1);
 }
