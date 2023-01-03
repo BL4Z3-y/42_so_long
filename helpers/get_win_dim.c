@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 18:20:18 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/12/27 19:23:40 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/03 16:43:58 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 void	get_win_dim(t_init *game)
 {
-	int	x;
-	int	y;
-
-	x = 0;
+	game->x = 0;
 	game->window_h = 0;
-	y = 0;
+	game->y = 0;
 	game->window_w = 0;
-	while (game->map[y])
+	while (game->map[game->y])
 	{
 		game->window_h++;
-		y++;
+		game->y++;
 	}
-	y = 0;
-	while (game->map[y][x])
+	game->y = 0;
+	while (game->map[game->y][game->x])
 	{
 		game->window_w++;
-		x++;
+		game->x++;
 	}
 	game->hei = game->window_h;
 	game->wid = game->window_w;

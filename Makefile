@@ -6,7 +6,7 @@
 #    By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 11:54:53 by yes-slim          #+#    #+#              #
-#    Updated: 2023/01/02 10:16:56 by yes-slim         ###   ########.fr        #
+#    Updated: 2023/01/03 17:14:23 by yes-slim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ NAME = so_long
 LIB = so_long.a
 DEL = rm -f
 
-HELPERS = ft_error map_read get_win_dim put_asset image_to_xpm map_render pos_check map_check
-LIBF = ft_strchr ft_atoi ft_strlen ft_strstr ft_strdup ft_substr ft_strjoin ft_itoa ft_split ft_strcmp
+HELPERS = ft_error map_read get_win_dim put_asset image_to_xpm map_render pos_check map_check p_moves
+LIBF = ft_strchr ft_strlen ft_strstr ft_strdup ft_strjoin ft_itoa ft_split
 GNL = get_next_line
 FT_PRINTF =	ft_printf ft_print_char ft_print_str ft_print_nbr ft_print_nbr_uns ft_print_hex_low ft_print_hex_up ft_print_adr
 

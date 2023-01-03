@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 14:42:12 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/01 14:59:21 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/02 13:03:35 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ char	*ft_strjoin(char *s1, char *s2)
 		new[j++] = s2[i++];
 	new[j] = '\0';
 	free (s1);
-	// free (s2);
 	return (new);
 }

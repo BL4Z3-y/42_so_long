@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:59:28 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 12:09:08 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/03 17:06:01 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,49 +15,36 @@
 void	map_check(t_init *game)
 {
 	get_pos(game);
-	if(game->count_c < 1 || game->count_e != 1 || game->count_p != 1)
-		ft_error(2);
-		
+	if (game->count_c < 1 || game->count_e != 1 || game->count_p != 1)
+		ft_error (2);
+	game->i = 1;
+	game->j = 1;
+	game->x = 64;
+	game->y = 64;
 }
 
 void	get_pos(t_init *game)
 {
-	int	x;
-	int	y;
-	int	i;
-	int	j;
-	
-	game->count_c = 0;
-	game->count_e = 0;
-	game->count_p = 0;
-	i = 1;
-	j = 1;
-	x = 64;
-	y = 64;
-	while (i < game->hei - 1)
+	while (game->i < game->hei - 1)
 	{
-		x = 64;
-		j = 1;	
-		while (j < game->wid - 1)
+		game->x = 64;
+		game->j = 1;
+		while (game->j < game->wid - 1)
 		{
-			if (game->map[i][j] == 'E')
-			{
-				game->count_e++;
-				game->exit_x = j;
-				game->exit_y = i;
-			}
-			if (game->map[i][j] == 'C')
+			if (game->map[game->i][game->j] == 'C')
 				game->count_c++;
-			if (game->map[i][j] == 'P')
+			if (game->map[game->i][game->j] == 'E')
+				game->count_e++;
+			if (game->map[game->i][game->j] == 'P')
 			{
-				game->player_x = j;
-				game->player_y = i;
+				game->player_x = game->j;
+				game->player_y = game->i;
 				game->count_p++;
 			}
-			j++;
-			x += 32;
+			game->j++;
+			game->x += 32;
 		}
-		i++;
-		y += 32;
+		game->i++;
+		game->y += 32;
 	}
 }

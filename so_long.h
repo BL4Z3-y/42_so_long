@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/02 12:06:17 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/03 17:05:21 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,24 @@ typedef struct initial
 	void	*skull;
 	void	*exit;
 	void	*exit_c;
-	void	*exit_o;
+	void	*exit_o1;
+	void	*exit_o2;
+	void	*exit_o3;
+	void	*exit_o4;
 	int		exit_x;
 	int		exit_y;
 	int		count_c;
 	int		count_p;
 	int		count_e;
 	int		moves;
+	int		height;
+	int		width;
+	int		heibg;
+	int		widbg;
+	int		x;
+	int		y;
+	int		i;
+	int		j;
 }	t_init;
 
 //GNL
@@ -105,7 +116,7 @@ void	put_border(t_init *game);
 void	put_border2(t_init *game);
 void	put_wall(t_init *game);
 int		moves_count(int keycode, t_init *game);
-int		ft_exit(void);
+int		ft_exit(t_init *game);
 void	map_render(t_init *game);
 void	player_mov(t_init *game, int keycode);
 void	step_count(t_init *game);
@@ -116,6 +127,12 @@ int		check_right(t_init *game);
 int		check_left(t_init *game);
 void	map_check(t_init *game);
 void	get_pos(t_init *game);
+int		animate(t_init *game);
+void	move_up(t_init *game);
+void	move_down(t_init *game);
+void	move_right(t_init *game);
+void	move_left(t_init *game);
+void	initialase(t_init *game);
 //-----------------------------------------------------//
 
 #endif

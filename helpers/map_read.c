@@ -6,13 +6,13 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 14:10:45 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/01 15:00:13 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/03 17:01:53 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void map_read(char *path, t_init *game)
+void	map_read(char *path, t_init *game)
 {
 	char	*str;
 	char	*tmp;
