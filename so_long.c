@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 13:35:44 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/03 17:12:53 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/05 20:51:16 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	main(int ac, char **av)
 		if (!game)
 			return (0);
 		map_read(av[1], game);
+		if (!game->map)
+			return (0);
 		initialase(game);
+		map_check(game);
 		terrain(game);
 		map_render(game);
 		put_player(game);

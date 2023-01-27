@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:21:16 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/03 17:05:21 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/05 19:16:33 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,11 @@ void	move_down(t_init *game);
 void	move_right(t_init *game);
 void	move_left(t_init *game);
 void	initialase(t_init *game);
+void	check_wall(t_init *game);
+void	check_rec(t_init *game);
+void	path_check(t_init *game);
+char	**dup_map(t_init *game);
+void	free_ft(char **map);
 //-----------------------------------------------------//
 
 #endif

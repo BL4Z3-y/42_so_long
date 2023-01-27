@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:19:05 by yes-slim          #+#    #+#             */
-/*   Updated: 2023/01/03 17:02:51 by yes-slim         ###   ########.fr       */
+/*   Updated: 2023/01/05 03:49:04 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ void	player_mov(t_init *game, int keycode)
 	if ((keycode == 2 || keycode == 124) && (check_right(game) == 1))
 		move_right(game);
 	if (game->player_x == game->exit_x && game->player_y == game->exit_y)
+	{
+		mlx_destroy_window(game->mlx, game->win);
 		exit(0);
+	}
 	mlx_put_image_to_window(game->mlx, game->win, game->player,
 		game->player_x * 32 + 32, game->player_y * 32 + 32);
 }
